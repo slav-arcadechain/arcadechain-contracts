@@ -22,7 +22,7 @@ module.exports = {
       timeoutBlocks: 200,
       skipDryRun: true
     }, cronos_testnet: {
-      provider: () => new HDWalletProvider(privateKey, `https://cronos-testnet-3.crypto.org:8545`),
+      provider: () => new HDWalletProvider(privateKey, `https://evm-t3.cronos.org`),
       network_id: 338,
       confirmations: 10,
       timeoutBlocks: 200,

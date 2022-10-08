@@ -279,21 +279,21 @@
     "absolutePath": "witnet-solidity-bridge/contracts/interfaces/IWitnetRandomness.sol",
     "exportedSymbols": {
       "IWitnetRandomness": [
-        2351
+        5671
       ],
       "IWitnetRequest": [
-        2367
+        5687
       ],
       "Witnet": [
-        2702
+        6022
       ]
     },
-    "id": 2352,
+    "id": 5672,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2239,
+        "id": 5559,
         "literals": [
           "solidity",
           ">=",
@@ -304,17 +304,17 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:31:15"
+        "src": "33:31:34"
       },
       {
         "absolutePath": "witnet-solidity-bridge/contracts/libs/Witnet.sol",
         "file": "../libs/Witnet.sol",
-        "id": 2240,
+        "id": 5560,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 2352,
-        "sourceUnit": 2703,
-        "src": "66:28:15",
+        "scope": 5672,
+        "sourceUnit": 6023,
+        "src": "66:28:34",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -325,47 +325,47 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 2241,
+          "id": 5561,
           "nodeType": "StructuredDocumentation",
-          "src": "96:85:15",
+          "src": "96:85:34",
           "text": "@title The Witnet Randomness generator interface.\n @author Witnet Foundation."
         },
         "fullyImplemented": false,
-        "id": 2351,
+        "id": 5671,
         "linearizedBaseContracts": [
-          2351
+          5671
         ],
         "name": "IWitnetRandomness",
-        "nameLocation": "191:17:15",
+        "nameLocation": "191:17:34",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "anonymous": false,
             "documentation": {
-              "id": 2242,
+              "id": 5562,
               "nodeType": "StructuredDocumentation",
-              "src": "216:490:15",
+              "src": "216:490:34",
               "text": "Thrown every time a new WitnetRandomnessRequest gets succesfully posted to the WitnetRequestBoard.\n @param from Address from which the randomize() function was called. \n @param prevBlock Block number in which a randomness request got posted just before this one. 0 if none.\n @param witnetQueryId Unique query id assigned to this request by the WRB.\n @param witnetRequestHash SHA-256 hash of the WitnetRandomnessRequest actual bytecode just posted to the WRB."
             },
             "eventSelector": "af291bb4e1767569c77502edb6ad1009e856f57c09f214886c6becc9836c20c0",
-            "id": 2252,
+            "id": 5572,
             "name": "Randomized",
-            "nameLocation": "717:10:15",
+            "nameLocation": "717:10:34",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2251,
+              "id": 5571,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2244,
+                  "id": 5564,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "from",
-                  "nameLocation": "753:4:15",
+                  "nameLocation": "753:4:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2252,
-                  "src": "737:20:15",
+                  "scope": 5572,
+                  "src": "737:20:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -373,10 +373,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2243,
+                    "id": 5563,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "737:7:15",
+                    "src": "737:7:34",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -387,14 +387,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 2246,
+                  "id": 5566,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "prevBlock",
-                  "nameLocation": "783:9:15",
+                  "nameLocation": "783:9:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2252,
-                  "src": "767:25:15",
+                  "scope": 5572,
+                  "src": "767:25:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -402,10 +402,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2245,
+                    "id": 5565,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "767:7:15",
+                    "src": "767:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -415,14 +415,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 2248,
+                  "id": 5568,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "witnetQueryId",
-                  "nameLocation": "810:13:15",
+                  "nameLocation": "810:13:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2252,
-                  "src": "802:21:15",
+                  "scope": 5572,
+                  "src": "802:21:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -430,10 +430,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2247,
+                    "id": 5567,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "802:7:15",
+                    "src": "802:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -443,14 +443,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 2250,
+                  "id": 5570,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "witnetRequestHash",
-                  "nameLocation": "841:17:15",
+                  "nameLocation": "841:17:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2252,
-                  "src": "833:25:15",
+                  "scope": 5572,
+                  "src": "833:25:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -458,10 +458,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2249,
+                    "id": 5569,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "833:7:15",
+                    "src": "833:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -470,38 +470,38 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "727:137:15"
+              "src": "727:137:34"
             },
-            "src": "711:154:15"
+            "src": "711:154:34"
           },
           {
             "documentation": {
-              "id": 2253,
+              "id": 5573,
               "nodeType": "StructuredDocumentation",
-              "src": "871:140:15",
+              "src": "871:140:34",
               "text": "Returns amount of wei required to be paid as a fee when requesting randomization with a \n transaction gas price as the one given."
             },
             "functionSelector": "a60ee268",
-            "id": 2260,
+            "id": 5580,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "estimateRandomizeFee",
-            "nameLocation": "1025:20:15",
+            "nameLocation": "1025:20:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2256,
+              "id": 5576,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2255,
+                  "id": 5575,
                   "mutability": "mutable",
                   "name": "_gasPrice",
-                  "nameLocation": "1054:9:15",
+                  "nameLocation": "1054:9:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2260,
-                  "src": "1046:17:15",
+                  "scope": 5580,
+                  "src": "1046:17:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -509,10 +509,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2254,
+                    "id": 5574,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1046:7:15",
+                    "src": "1046:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -521,21 +521,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1045:19:15"
+              "src": "1045:19:34"
             },
             "returnParameters": {
-              "id": 2259,
+              "id": 5579,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2258,
+                  "id": 5578,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2260,
-                  "src": "1088:7:15",
+                  "scope": 5580,
+                  "src": "1088:7:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -543,10 +543,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2257,
+                    "id": 5577,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1088:7:15",
+                    "src": "1088:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -555,42 +555,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1087:9:15"
+              "src": "1087:9:34"
             },
-            "scope": 2351,
-            "src": "1016:81:15",
+            "scope": 5671,
+            "src": "1016:81:34",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2261,
+              "id": 5581,
               "nodeType": "StructuredDocumentation",
-              "src": "1103:669:15",
+              "src": "1103:669:34",
               "text": "Retrieves data of a randomization request that got successfully posted to the WRB within a given block.\n @dev Returns zero values if no randomness request was actually posted within a given block.\n @param _block Block number whose randomness request is being queried for.\n @return _from Address from which the latest randomness request was posted.\n @return _id Unique request identifier as provided by the WRB.\n @return _prevBlock Block number in which a randomness request got posted just before this one. 0 if none.\n @return _nextBlock Block number in which a randomness request got posted just after this one, 0 if none."
             },
             "functionSelector": "a3252f68",
-            "id": 2274,
+            "id": 5594,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getRandomizeData",
-            "nameLocation": "1786:16:15",
+            "nameLocation": "1786:16:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2264,
+              "id": 5584,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2263,
+                  "id": 5583,
                   "mutability": "mutable",
                   "name": "_block",
-                  "nameLocation": "1811:6:15",
+                  "nameLocation": "1811:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2274,
-                  "src": "1803:14:15",
+                  "scope": 5594,
+                  "src": "1803:14:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -598,10 +598,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2262,
+                    "id": 5582,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1803:7:15",
+                    "src": "1803:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -610,21 +610,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1802:16:15"
+              "src": "1802:16:34"
             },
             "returnParameters": {
-              "id": 2273,
+              "id": 5593,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2266,
+                  "id": 5586,
                   "mutability": "mutable",
                   "name": "_from",
-                  "nameLocation": "1858:5:15",
+                  "nameLocation": "1858:5:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2274,
-                  "src": "1850:13:15",
+                  "scope": 5594,
+                  "src": "1850:13:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -632,10 +632,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2265,
+                    "id": 5585,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1850:7:15",
+                    "src": "1850:7:34",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -646,13 +646,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2268,
+                  "id": 5588,
                   "mutability": "mutable",
                   "name": "_id",
-                  "nameLocation": "1873:3:15",
+                  "nameLocation": "1873:3:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2274,
-                  "src": "1865:11:15",
+                  "scope": 5594,
+                  "src": "1865:11:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -660,10 +660,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2267,
+                    "id": 5587,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1865:7:15",
+                    "src": "1865:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -673,13 +673,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2270,
+                  "id": 5590,
                   "mutability": "mutable",
                   "name": "_prevBlock",
-                  "nameLocation": "1886:10:15",
+                  "nameLocation": "1886:10:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2274,
-                  "src": "1878:18:15",
+                  "scope": 5594,
+                  "src": "1878:18:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -687,10 +687,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2269,
+                    "id": 5589,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1878:7:15",
+                    "src": "1878:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -700,13 +700,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2272,
+                  "id": 5592,
                   "mutability": "mutable",
                   "name": "_nextBlock",
-                  "nameLocation": "1906:10:15",
+                  "nameLocation": "1906:10:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2274,
-                  "src": "1898:18:15",
+                  "scope": 5594,
+                  "src": "1898:18:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -714,10 +714,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2271,
+                    "id": 5591,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1898:7:15",
+                    "src": "1898:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -726,42 +726,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1849:68:15"
+              "src": "1849:68:34"
             },
-            "scope": 2351,
-            "src": "1777:141:15",
+            "scope": 5671,
+            "src": "1777:141:34",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2275,
+              "id": 5595,
               "nodeType": "StructuredDocumentation",
-              "src": "1924:808:15",
+              "src": "1924:808:34",
               "text": "Retrieves the randomness generated upon solving a request that was posted within a given block,\n if any, or to the _first_ request posted after that block, otherwise. Should the intended \n request happen to be finalized with errors on the Witnet oracle network side, this function \n will recursively try to return randomness from the next non-faulty randomization request found \n in storage, if any. \n @dev Fails if:\n @dev   i.   no `randomize()` was not called in either the given block, or afterwards.\n @dev   ii.  a request posted in/after given block does exist, but no result has been provided yet.\n @dev   iii. all requests in/after the given block were solved with errors.\n @param _block Block number from which the search will start."
             },
             "functionSelector": "fb476cad",
-            "id": 2282,
+            "id": 5602,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getRandomnessAfter",
-            "nameLocation": "2746:18:15",
+            "nameLocation": "2746:18:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2278,
+              "id": 5598,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2277,
+                  "id": 5597,
                   "mutability": "mutable",
                   "name": "_block",
-                  "nameLocation": "2773:6:15",
+                  "nameLocation": "2773:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2282,
-                  "src": "2765:14:15",
+                  "scope": 5602,
+                  "src": "2765:14:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -769,10 +769,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2276,
+                    "id": 5596,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2765:7:15",
+                    "src": "2765:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -781,21 +781,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2764:16:15"
+              "src": "2764:16:34"
             },
             "returnParameters": {
-              "id": 2281,
+              "id": 5601,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2280,
+                  "id": 5600,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2282,
-                  "src": "2804:7:15",
+                  "scope": 5602,
+                  "src": "2804:7:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -803,10 +803,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2279,
+                    "id": 5599,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2804:7:15",
+                    "src": "2804:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -815,42 +815,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2803:9:15"
+              "src": "2803:9:34"
             },
-            "scope": 2351,
-            "src": "2737:76:15",
+            "scope": 5671,
+            "src": "2737:76:34",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2283,
+              "id": 5603,
               "nodeType": "StructuredDocumentation",
-              "src": "2820:268:15",
+              "src": "2820:268:34",
               "text": "Tells what is the number of the next block in which a randomization request was posted after the given one. \n @param _block Block number from which the search will start.\n @return Number of the first block found after the given one, or `0` otherwise."
             },
             "functionSelector": "40b41daa",
-            "id": 2290,
+            "id": 5610,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getRandomnessNextBlock",
-            "nameLocation": "3102:22:15",
+            "nameLocation": "3102:22:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2286,
+              "id": 5606,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2285,
+                  "id": 5605,
                   "mutability": "mutable",
                   "name": "_block",
-                  "nameLocation": "3133:6:15",
+                  "nameLocation": "3133:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2290,
-                  "src": "3125:14:15",
+                  "scope": 5610,
+                  "src": "3125:14:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -858,10 +858,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2284,
+                    "id": 5604,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3125:7:15",
+                    "src": "3125:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -870,21 +870,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3124:16:15"
+              "src": "3124:16:34"
             },
             "returnParameters": {
-              "id": 2289,
+              "id": 5609,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2288,
+                  "id": 5608,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2290,
-                  "src": "3164:7:15",
+                  "scope": 5610,
+                  "src": "3164:7:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -892,10 +892,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2287,
+                    "id": 5607,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3164:7:15",
+                    "src": "3164:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -904,42 +904,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3163:9:15"
+              "src": "3163:9:34"
             },
-            "scope": 2351,
-            "src": "3093:80:15",
+            "scope": 5671,
+            "src": "3093:80:34",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2291,
+              "id": 5611,
               "nodeType": "StructuredDocumentation",
-              "src": "3180:229:15",
+              "src": "3180:229:34",
               "text": "Gets previous block in which a randomness request was posted before the given one.\n @param _block Block number from which the search will start.\n @return First block found before the given one, or `0` otherwise."
             },
             "functionSelector": "36b651bb",
-            "id": 2298,
+            "id": 5618,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getRandomnessPrevBlock",
-            "nameLocation": "3423:22:15",
+            "nameLocation": "3423:22:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2294,
+              "id": 5614,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2293,
+                  "id": 5613,
                   "mutability": "mutable",
                   "name": "_block",
-                  "nameLocation": "3454:6:15",
+                  "nameLocation": "3454:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2298,
-                  "src": "3446:14:15",
+                  "scope": 5618,
+                  "src": "3446:14:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -947,10 +947,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2292,
+                    "id": 5612,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3446:7:15",
+                    "src": "3446:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -959,21 +959,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3445:16:15"
+              "src": "3445:16:34"
             },
             "returnParameters": {
-              "id": 2297,
+              "id": 5617,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2296,
+                  "id": 5616,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2298,
-                  "src": "3485:7:15",
+                  "scope": 5618,
+                  "src": "3485:7:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -981,10 +981,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2295,
+                    "id": 5615,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3485:7:15",
+                    "src": "3485:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -993,42 +993,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3484:9:15"
+              "src": "3484:9:34"
             },
-            "scope": 2351,
-            "src": "3414:80:15",
+            "scope": 5671,
+            "src": "3414:80:34",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2299,
+              "id": 5619,
               "nodeType": "StructuredDocumentation",
-              "src": "3500:194:15",
+              "src": "3500:194:34",
               "text": "Returns `true` only when the randomness request that got posted within given block was already\n reported back from the Witnet oracle, either successfully or with an error of any kind."
             },
             "functionSelector": "9bc86fec",
-            "id": 2306,
+            "id": 5626,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "isRandomized",
-            "nameLocation": "3708:12:15",
+            "nameLocation": "3708:12:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2302,
+              "id": 5622,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2301,
+                  "id": 5621,
                   "mutability": "mutable",
                   "name": "_block",
-                  "nameLocation": "3729:6:15",
+                  "nameLocation": "3729:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2306,
-                  "src": "3721:14:15",
+                  "scope": 5626,
+                  "src": "3721:14:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1036,10 +1036,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2300,
+                    "id": 5620,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3721:7:15",
+                    "src": "3721:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1048,21 +1048,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3720:16:15"
+              "src": "3720:16:34"
             },
             "returnParameters": {
-              "id": 2305,
+              "id": 5625,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2304,
+                  "id": 5624,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2306,
-                  "src": "3760:4:15",
+                  "scope": 5626,
+                  "src": "3760:4:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1070,10 +1070,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2303,
+                    "id": 5623,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3760:4:15",
+                    "src": "3760:4:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1082,48 +1082,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3759:6:15"
+              "src": "3759:6:34"
             },
-            "scope": 2351,
-            "src": "3699:67:15",
+            "scope": 5671,
+            "src": "3699:67:34",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2307,
+              "id": 5627,
               "nodeType": "StructuredDocumentation",
-              "src": "3772:89:15",
+              "src": "3772:89:34",
               "text": "Returns latest block in which a randomness request got sucessfully posted to the WRB."
             },
             "functionSelector": "9938fd0c",
-            "id": 2312,
+            "id": 5632,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "latestRandomizeBlock",
-            "nameLocation": "3875:20:15",
+            "nameLocation": "3875:20:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2308,
+              "id": 5628,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3895:2:15"
+              "src": "3895:2:34"
             },
             "returnParameters": {
-              "id": 2311,
+              "id": 5631,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2310,
+                  "id": 5630,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2312,
-                  "src": "3921:7:15",
+                  "scope": 5632,
+                  "src": "3921:7:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1131,10 +1131,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2309,
+                    "id": 5629,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3921:7:15",
+                    "src": "3921:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1143,42 +1143,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3920:9:15"
+              "src": "3920:9:34"
             },
-            "scope": 2351,
-            "src": "3866:64:15",
+            "scope": 5671,
+            "src": "3866:64:34",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2313,
+              "id": 5633,
               "nodeType": "StructuredDocumentation",
-              "src": "3936:545:15",
+              "src": "3936:545:34",
               "text": "Generates a pseudo-random number uniformly distributed within the range [0 .. _range), by using \n the given `_nonce` value and the randomness returned by `getRandomnessAfter(_block)`. \n @dev Fails under same conditions as `getRandomnessAfter(uint256)` may do.\n @param _range Range within which the uniformly-distributed random number will be generated.\n @param _nonce Nonce value enabling multiple random numbers from the same randomness value.\n @param _block Block number from which the search will start."
             },
             "functionSelector": "24cbbfc1",
-            "id": 2324,
+            "id": 5644,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "random",
-            "nameLocation": "4495:6:15",
+            "nameLocation": "4495:6:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2320,
+              "id": 5640,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2315,
+                  "id": 5635,
                   "mutability": "mutable",
                   "name": "_range",
-                  "nameLocation": "4509:6:15",
+                  "nameLocation": "4509:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2324,
-                  "src": "4502:13:15",
+                  "scope": 5644,
+                  "src": "4502:13:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1186,10 +1186,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 2314,
+                    "id": 5634,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4502:6:15",
+                    "src": "4502:6:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1199,13 +1199,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2317,
+                  "id": 5637,
                   "mutability": "mutable",
                   "name": "_nonce",
-                  "nameLocation": "4525:6:15",
+                  "nameLocation": "4525:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2324,
-                  "src": "4517:14:15",
+                  "scope": 5644,
+                  "src": "4517:14:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1213,10 +1213,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2316,
+                    "id": 5636,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4517:7:15",
+                    "src": "4517:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1226,13 +1226,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2319,
+                  "id": 5639,
                   "mutability": "mutable",
                   "name": "_block",
-                  "nameLocation": "4541:6:15",
+                  "nameLocation": "4541:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2324,
-                  "src": "4533:14:15",
+                  "scope": 5644,
+                  "src": "4533:14:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1240,10 +1240,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2318,
+                    "id": 5638,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4533:7:15",
+                    "src": "4533:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1252,21 +1252,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4501:47:15"
+              "src": "4501:47:34"
             },
             "returnParameters": {
-              "id": 2323,
+              "id": 5643,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2322,
+                  "id": 5642,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2324,
-                  "src": "4572:6:15",
+                  "scope": 5644,
+                  "src": "4572:6:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1274,10 +1274,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 2321,
+                    "id": 5641,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4572:6:15",
+                    "src": "4572:6:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1286,42 +1286,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4571:8:15"
+              "src": "4571:8:34"
             },
-            "scope": 2351,
-            "src": "4486:94:15",
+            "scope": 5671,
+            "src": "4486:94:34",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2325,
+              "id": 5645,
               "nodeType": "StructuredDocumentation",
-              "src": "4586:434:15",
+              "src": "4586:434:34",
               "text": "Generates a pseudo-random number uniformly distributed within the range [0 .. _range), by using \n the given `_nonce` value and the given `_seed` as a source of entropy.\n @param _range Range within which the uniformly-distributed random number will be generated.\n @param _nonce Nonce value enabling multiple random numbers from the same randomness value.\n @param _seed Seed value used as entropy source."
             },
             "functionSelector": "e7d4a016",
-            "id": 2336,
+            "id": 5656,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "random",
-            "nameLocation": "5034:6:15",
+            "nameLocation": "5034:6:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2332,
+              "id": 5652,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2327,
+                  "id": 5647,
                   "mutability": "mutable",
                   "name": "_range",
-                  "nameLocation": "5048:6:15",
+                  "nameLocation": "5048:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2336,
-                  "src": "5041:13:15",
+                  "scope": 5656,
+                  "src": "5041:13:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1329,10 +1329,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 2326,
+                    "id": 5646,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5041:6:15",
+                    "src": "5041:6:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1342,13 +1342,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2329,
+                  "id": 5649,
                   "mutability": "mutable",
                   "name": "_nonce",
-                  "nameLocation": "5064:6:15",
+                  "nameLocation": "5064:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2336,
-                  "src": "5056:14:15",
+                  "scope": 5656,
+                  "src": "5056:14:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1356,10 +1356,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2328,
+                    "id": 5648,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5056:7:15",
+                    "src": "5056:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1369,13 +1369,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 2331,
+                  "id": 5651,
                   "mutability": "mutable",
                   "name": "_seed",
-                  "nameLocation": "5080:5:15",
+                  "nameLocation": "5080:5:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2336,
-                  "src": "5072:13:15",
+                  "scope": 5656,
+                  "src": "5072:13:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1383,10 +1383,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2330,
+                    "id": 5650,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5072:7:15",
+                    "src": "5072:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1395,21 +1395,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "5040:46:15"
+              "src": "5040:46:34"
             },
             "returnParameters": {
-              "id": 2335,
+              "id": 5655,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2334,
+                  "id": 5654,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2336,
-                  "src": "5110:6:15",
+                  "scope": 5656,
+                  "src": "5110:6:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1417,10 +1417,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 2333,
+                    "id": 5653,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5110:6:15",
+                    "src": "5110:6:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -1429,48 +1429,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "5109:8:15"
+              "src": "5109:8:34"
             },
-            "scope": 2351,
-            "src": "5025:93:15",
+            "scope": 5671,
+            "src": "5025:93:34",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2337,
+              "id": 5657,
               "nodeType": "StructuredDocumentation",
-              "src": "5124:541:15",
+              "src": "5124:541:34",
               "text": "Requests the Witnet oracle to generate an EVM-agnostic and trustless source of randomness. \n Only one randomness request per block will be actually posted to the WRB. Should there \n already be a posted request within current block, it will try to upgrade Witnet fee of current's \n block randomness request according to current gas price. In both cases, all unused funds shall \n be transfered back to the tx sender.\n @return _usedFunds Amount of funds actually used from those provided by the tx sender."
             },
             "functionSelector": "699b328a",
-            "id": 2342,
+            "id": 5662,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "randomize",
-            "nameLocation": "5679:9:15",
+            "nameLocation": "5679:9:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2338,
+              "id": 5658,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "5688:2:15"
+              "src": "5688:2:34"
             },
             "returnParameters": {
-              "id": 2341,
+              "id": 5661,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2340,
+                  "id": 5660,
                   "mutability": "mutable",
                   "name": "_usedFunds",
-                  "nameLocation": "5725:10:15",
+                  "nameLocation": "5725:10:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2342,
-                  "src": "5717:18:15",
+                  "scope": 5662,
+                  "src": "5717:18:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1478,10 +1478,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2339,
+                    "id": 5659,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5717:7:15",
+                    "src": "5717:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1490,42 +1490,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "5716:20:15"
+              "src": "5716:20:34"
             },
-            "scope": 2351,
-            "src": "5670:67:15",
+            "scope": 5671,
+            "src": "5670:67:34",
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2343,
+              "id": 5663,
               "nodeType": "StructuredDocumentation",
-              "src": "5743:482:15",
+              "src": "5743:482:34",
               "text": "Increases Witnet fee related to a pending-to-be-solved randomness request, as much as it\n may be required in proportion to how much bigger the current tx gas price is with respect the \n highest gas price that was paid in either previous fee upgrades, or when the given randomness \n request was posted. All unused funds shall be transferred back to the tx sender.\n @return _usedFunds Amount of dunds actually used from those provided by the tx sender."
             },
             "functionSelector": "e35329f8",
-            "id": 2350,
+            "id": 5670,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "upgradeRandomizeFee",
-            "nameLocation": "6239:19:15",
+            "nameLocation": "6239:19:34",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2346,
+              "id": 5666,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2345,
+                  "id": 5665,
                   "mutability": "mutable",
                   "name": "_block",
-                  "nameLocation": "6267:6:15",
+                  "nameLocation": "6267:6:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2350,
-                  "src": "6259:14:15",
+                  "scope": 5670,
+                  "src": "6259:14:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1533,10 +1533,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2344,
+                    "id": 5664,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6259:7:15",
+                    "src": "6259:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1545,21 +1545,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "6258:16:15"
+              "src": "6258:16:34"
             },
             "returnParameters": {
-              "id": 2349,
+              "id": 5669,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2348,
+                  "id": 5668,
                   "mutability": "mutable",
                   "name": "_usedFunds",
-                  "nameLocation": "6309:10:15",
+                  "nameLocation": "6309:10:34",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2350,
-                  "src": "6301:18:15",
+                  "scope": 5670,
+                  "src": "6301:18:34",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1567,10 +1567,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2347,
+                    "id": 5667,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6301:7:15",
+                    "src": "6301:7:34",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1579,21 +1579,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "6300:20:15"
+              "src": "6300:20:34"
             },
-            "scope": 2351,
-            "src": "6230:91:15",
+            "scope": 5671,
+            "src": "6230:91:34",
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 2352,
-        "src": "181:6142:15",
+        "scope": 5672,
+        "src": "181:6142:34",
         "usedErrors": []
       }
     ],
-    "src": "33:6291:15"
+    "src": "33:6291:34"
   },
   "compiler": {
     "name": "solc",
@@ -1601,7 +1601,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-09-04T07:00:09.984Z",
+  "updatedAt": "2022-10-06T19:08:14.391Z",
   "devdoc": {
     "author": "Witnet Foundation.",
     "events": {

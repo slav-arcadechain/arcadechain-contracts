@@ -42,15 +42,15 @@
     "absolutePath": "witnet-solidity-bridge/contracts/interfaces/IWitnetRequest.sol",
     "exportedSymbols": {
       "IWitnetRequest": [
-        2367
+        5687
       ]
     },
-    "id": 2368,
+    "id": 5688,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2353,
+        "id": 5673,
         "literals": [
           "solidity",
           ">=",
@@ -61,7 +61,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:31:16"
+        "src": "33:31:35"
       },
       {
         "abstract": false,
@@ -70,54 +70,54 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 2354,
+          "id": 5674,
           "nodeType": "StructuredDocumentation",
-          "src": "66:87:16",
+          "src": "66:87:35",
           "text": "@title The Witnet Data Request basic interface.\n @author The Witnet Foundation."
         },
         "fullyImplemented": false,
-        "id": 2367,
+        "id": 5687,
         "linearizedBaseContracts": [
-          2367
+          5687
         ],
         "name": "IWitnetRequest",
-        "nameLocation": "163:14:16",
+        "nameLocation": "163:14:35",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "documentation": {
-              "id": 2355,
+              "id": 5675,
               "nodeType": "StructuredDocumentation",
-              "src": "184:138:16",
+              "src": "184:138:35",
               "text": "A `IWitnetRequest` is constructed around a `bytes` value containing \n a well-formed Witnet Data Request using Protocol Buffers."
             },
             "functionSelector": "f0940002",
-            "id": 2360,
+            "id": 5680,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "bytecode",
-            "nameLocation": "336:8:16",
+            "nameLocation": "336:8:35",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2356,
+              "id": 5676,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "344:2:16"
+              "src": "344:2:35"
             },
             "returnParameters": {
-              "id": 2359,
+              "id": 5679,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2358,
+                  "id": 5678,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2360,
-                  "src": "370:12:16",
+                  "scope": 5680,
+                  "src": "370:12:35",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -125,10 +125,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 2357,
+                    "id": 5677,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "370:5:16",
+                    "src": "370:5:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -137,48 +137,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "369:14:16"
+              "src": "369:14:35"
             },
-            "scope": 2367,
-            "src": "327:57:16",
+            "scope": 5687,
+            "src": "327:57:35",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "documentation": {
-              "id": 2361,
+              "id": 5681,
               "nodeType": "StructuredDocumentation",
-              "src": "390:69:16",
+              "src": "390:69:35",
               "text": "Returns SHA256 hash of Witnet Data Request as CBOR-encoded bytes."
             },
             "functionSelector": "09bd5a60",
-            "id": 2366,
+            "id": 5686,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "hash",
-            "nameLocation": "473:4:16",
+            "nameLocation": "473:4:35",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2362,
+              "id": 5682,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "477:2:16"
+              "src": "477:2:35"
             },
             "returnParameters": {
-              "id": 2365,
+              "id": 5685,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2364,
+                  "id": 5684,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2366,
-                  "src": "503:7:16",
+                  "scope": 5686,
+                  "src": "503:7:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -186,10 +186,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 2363,
+                    "id": 5683,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "503:7:16",
+                    "src": "503:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -198,21 +198,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "502:9:16"
+              "src": "502:9:35"
             },
-            "scope": 2367,
-            "src": "464:48:16",
+            "scope": 5687,
+            "src": "464:48:35",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 2368,
-        "src": "153:361:16",
+        "scope": 5688,
+        "src": "153:361:35",
         "usedErrors": []
       }
     ],
-    "src": "33:482:16"
+    "src": "33:482:35"
   },
   "compiler": {
     "name": "solc",
@@ -220,7 +220,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-09-04T07:00:09.985Z",
+  "updatedAt": "2022-10-06T19:08:14.392Z",
   "devdoc": {
     "author": "The Witnet Foundation.",
     "kind": "dev",
