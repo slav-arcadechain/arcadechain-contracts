@@ -8,6 +8,7 @@
     "test": "truffle test"
   },
   "dependencies": {
+    "bignumber.js": "^9.1.0",
     "openzeppelin-solidity": "^4.6.0",
     "witnet-solidity-bridge": "^0.5.7"
   },
