@@ -18,13 +18,13 @@ module.exports = {
     }, bsc_testnet: {
       provider: () => new HDWalletProvider(privateKey, `https://data-seed-prebsc-1-s1.binance.org:8545`),
       network_id: 97,
-      confirmations: 10,
+      confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true
     }, cronos_testnet: {
       provider: () => new HDWalletProvider(privateKey, `https://evm-t3.cronos.org`),
       network_id: 338,
-      confirmations: 10,
+      confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true
     }, mumbai: {
@@ -41,7 +41,7 @@ module.exports = {
   },
   compilers: {
     solc: {
-      version: "0.8.17",      // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.14",      // Fetch exact version from solc-bin (default: truffle's version)
       settings: {          // See the solidity docs for advice about optimization and evmVersion
         optimizer: {
           enabled: true,
