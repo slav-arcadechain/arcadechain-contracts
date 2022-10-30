@@ -27,13 +27,9 @@ contract('Slot', (accs) => {
     beforeEach('should setup the contract instance', async () => {
         token = await Tusd.new(1000);
         await token.transfer(user, userTusdInitialBalance);
-        contract = await Slot.new(admin, operator, token.address, gameFee);
+        contract = await Slot.new(admin, operator, token.address, gameFee, [10, 50, 100], ["25", "10", "5"],100);
 
         await token.transfer(contract.address, contractTusdInitialBalance);
-
-        await contract.setBrackets([10, 50, 100], {from: admin, gas: gas, gasPrice: 500000000})
-        await contract.setWinnings(["25", "10", "5"], {from: admin, gas: gas, gasPrice: 500000000})
-        await contract.setThreshold( 100, {from: admin, gas: gas, gasPrice: 500000000})
     });
 
     describe('Admin', function () {
@@ -152,9 +148,6 @@ contract('Slot', (accs) => {
             await contract.enterGame(1, {from: user, gas: gas, gasPrice: gasPrice});
             await contract.enterGame(2, {from: user, gas: gas, gasPrice: gasPrice});
             await contract.enterGame(3, {from: user, gas: gas, gasPrice: gasPrice});
-
-            // await contract.setRoundResult(1, gameFee * 1.1, {from: operator, gas: gas, gasPrice: gasPrice});
-            // await contract.setRoundResult(3, gameFee / 2, {from: operator, gas: gas, gasPrice: gasPrice});
 
             // check user account credited when claimed
             const userStartBalance = await token.balanceOf(user);

@@ -18,13 +18,19 @@ module.exports = {
     }, bsc_testnet: {
       provider: () => new HDWalletProvider(privateKey, `https://data-seed-prebsc-1-s1.binance.org:8545`),
       network_id: 97,
-      confirmations: 10,
+      confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true
     }, cronos_testnet: {
       provider: () => new HDWalletProvider(privateKey, `https://evm-t3.cronos.org`),
       network_id: 338,
-      confirmations: 10,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    }, polygon_testnet: {
+      provider: () => new HDWalletProvider(privateKey, `https://rpc-mumbai.maticvigil.com/v1/c542596d3086e52602d4c9d913d1c6f709639f08`),
+      network_id: 80001,
+      confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true
     }

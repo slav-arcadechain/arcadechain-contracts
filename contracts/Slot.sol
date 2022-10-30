@@ -61,12 +61,18 @@ contract Slot is Ownable, Pausable, ReentrancyGuard {
         address _adminAddress,
         address _operatorAddress,
         address _gameTokenAddress,
-        uint256 _gameFee
+        uint256 _gameFee,
+        uint8[] memory _brackets,
+        uint256[] memory _winnings,
+        uint8 _threshold
     ) {
         adminAddress = _adminAddress;
         operatorAddress = _operatorAddress;
         gameToken = _gameTokenAddress;
         gameFee = _gameFee;
+        brackets = _brackets;
+        winnings = _winnings;
+        threshold = _threshold;
     }
 
     function setOperator(address _operatorAddress) external onlyAdmin {
