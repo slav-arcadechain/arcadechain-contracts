@@ -2,18 +2,35 @@
 
 pragma solidity ^0.8.0;
 
+import "./abstract/IUniswapV2Router.sol";
 import "./abstract/Ownable.sol";
 import "./abstract/Pausable.sol";
 import "./abstract/ReentrancyGuard.sol";
-import "../node_modules/openzeppelin-solidity/contracts/interfaces/IERC20.sol";
+import "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol";
 
 error Treasury__NotAdmin();
 error Treasury__NotOperator();
 error Treasury__NotAdminOrOperator();
 error Treasury__AddressCantBeZero();
 error Treasury__PercentageCantBeMoreThanZero();
+error Treasury__MustBeEqualLength();
+error Treasury__PeriodCantBeMoreThanMaxPeriod();
+error Treasury__TreasuryDontHaveEnoughTokens();
+error Treasury__YouCantWithdrawIfYouAreNotOwner();
+
+interface IERC20 {
+    function balanceOf(address account) external view returns (uint256);
+
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+
+    function approve(address spender, uint256 amount) external returns (bool);
+}
 
 contract Treasury is Ownable, Pausable, ReentrancyGuard {
+    ISwapRouter private swapRouter = ISwapRouter(0xE592427A0AEce92De3Edee1F18E0157C05861564);
+
     ///@notice immutable because we want to set it just once
     address private immutable i_admin;
     address private s_operator;
@@ -21,20 +38,14 @@ contract Treasury is Ownable, Pausable, ReentrancyGuard {
     ///@notice token in which we store our balance,TUSD for example
     IERC20 private s_token;
 
+    ///@notice our act token
+    IERC20 private immutable i_actToken;
+
     ///@notice percentage of tokens we want to burn with burn() function
     uint8 private s_percentageOfBurn;
 
-    ///@notice percantage of tokens that owner of golden ticket will have
+    ///@notice percentage of tokens that owner of golden ticket will have
     uint8 private s_percentageOfGoldenTicket;
-
-    ///@notice Balances<walletAddress, <periodId, balance>
-    mapping(address => mapping(uint8 => uint256)) private balances;
-
-    ///@notice PeriodsBalance<periodId, balance>
-    mapping(uint8 => uint256) private periodsBalances;
-
-    ///@notice Periods<periodId, <walletAddress, balance>>
-    mapping(uint8 => mapping(address => uint256)) private periods;
 
     ///@dev using revert,because it's more gas efficient
     modifier onlyAdmin() {
@@ -74,27 +85,59 @@ contract Treasury is Ownable, Pausable, ReentrancyGuard {
         _;
     }
 
+    ///@notice checking if we have enough balance
+    modifier treasuryHaveBalance(uint256 _amount) {
+        if (_amount > s_token.balanceOf(address(this))) {
+            revert Treasury__TreasuryDontHaveEnoughTokens();
+        }
+        _;
+    }
+
     constructor(
         address _adminAddress,
         address _operator,
         address _tokenAddress,
+        address _act,
         uint8 _percentageOfBurn,
         uint8 _percentageOfGoldenTicket
     ) {
         i_admin = _adminAddress;
         s_operator = _operator;
         s_token = IERC20(_tokenAddress);
+        i_actToken = IERC20(_act);
         s_percentageOfBurn = _percentageOfBurn;
         s_percentageOfGoldenTicket = _percentageOfGoldenTicket;
     }
 
-    function weeklyCalculation() external returns (uint256) {}
+    ///@notice this function calculate amount of tokens user could withdraw for current week
+    ///@param _weights the array of weights in percent passed from backend the 100 %=10000
+    ///@param _usersWallets the array of users that own ACT token,passed from backend
+    function weeklyCalculation(
+        address goldenTicketWinner,
+        address[] memory _usersWallets,
+        uint256[] memory _weights
+    ) external {
+        if (_usersWallets.length != _weights.length) {
+            revert Treasury__MustBeEqualLength();
+        }
+        burn();
+        goldenTicket(goldenTicketWinner);
 
-    function burn() private {}
+        //Getting how much TUSD(for example) does the contract have
+        uint256 balanceAfterAllExecutions = getCurrentAmountOfTokens();
 
-    function goldenTicket() private {}
+        //Updating all our maps
+        for (uint i = 0; i < _usersWallets.length; i++) {
+            //Calculating how much tokens users will be able to withdraw
 
-    function withdraw(address _userWallet, uint256 _amount) public {}
+            //Dividing by 10000 because 100% is 10000
+            uint256 userTokensToWithdraw = (balanceAfterAllExecutions *
+                _weights[i]) / 10000;
+
+            //Here we withdrawing money to the users
+            s_token.transfer(_usersWallets[i], userTokensToWithdraw);
+        }
+    }
 
     ///@notice setting new operator,this could do only admin
     function setOperator(address _operator)
@@ -132,6 +175,46 @@ contract Treasury is Ownable, Pausable, ReentrancyGuard {
         s_percentageOfGoldenTicket = _percentage;
     }
 
+    ///@notice this function use our stable(s_token) to buy ACT and then burn it every period
+    ///@notice not sure do we need treasuryHaveBalance modifier
+    function burn() internal treasuryHaveBalance(getAmountToBurn()) {
+        uint256 amountToBuy = getAmountToBurn();
+        uint256 amountToBurn = swapTokens(amountToBuy);
+        i_actToken.transfer(
+            0x000000000000000000000000000000000000dEaD,
+            amountToBurn
+        );
+    }
+
+    ///@notice this function will automatically swap from TUSD to ACT
+    function swapTokens(uint amountIn) public returns (uint256 amountOut) {
+        s_token.approve(address(swapRouter), amountIn);
+
+        ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
+            .ExactInputSingleParams({
+                tokenIn: address(s_token),
+                tokenOut: address(i_actToken),
+                fee: 3000,
+                recipient: address(this),
+                deadline: block.timestamp,
+                amountIn: amountIn,
+                amountOutMinimum: 0,
+                sqrtPriceLimitX96: 0
+            });
+        amountOut = swapRouter.exactInputSingle(params);
+        return amountOut;
+    }
+
+    ///@notice this function trasnfer tokens to the owner of golden ticket of this period
+    ///@notice not sure do we really need treasuryHaveBalance modifier
+    function goldenTicket(address winnerAddress)
+        internal
+        treasuryHaveBalance(getAmountOfGoldenTicket())
+    {
+        uint256 amountToWithdraw = getAmountOfGoldenTicket();
+        s_token.transfer(winnerAddress, amountToWithdraw);
+    }
+
     function getAdmin() public view returns (address) {
         return i_admin;
     }
@@ -144,11 +227,36 @@ contract Treasury is Ownable, Pausable, ReentrancyGuard {
         return address(s_token);
     }
 
+    function getActAddress() public view returns (address) {
+        return address(i_actToken);
+    }
+
     function getPercentageOfBurn() public view returns (uint8) {
         return s_percentageOfBurn;
     }
 
     function getPercentageOfGoldenTicket() public view returns (uint8) {
         return s_percentageOfGoldenTicket;
+    }
+
+    function getCurrentAmountOfTokens() public view returns (uint256) {
+        return s_token.balanceOf(address(this));
+    }
+
+    ///@notice get how much tokens we want to burn
+    function getAmountToBurn() public view returns (uint256) {
+        uint256 currnetBalance = getCurrentAmountOfTokens();
+        uint256 percentToBurn = getPercentageOfBurn();
+        uint256 amountToBurn = (currnetBalance * percentToBurn) / 100;
+        return amountToBurn;
+    }
+
+    ///@notice get hou much tokens owner of golden ticket will get
+    function getAmountOfGoldenTicket() public view returns (uint256) {
+        uint256 currentBalance = getCurrentAmountOfTokens();
+        uint256 percentOfGoldenTicket = getPercentageOfGoldenTicket();
+        uint256 amountOfGoldenTicket = (currentBalance *
+            percentOfGoldenTicket) / 100;
+        return amountOfGoldenTicket;
     }
 }
