@@ -27,7 +27,7 @@ module.exports = {
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true
-    }, polygon_testnet: {
+    }, mumbai: {
       provider: () => new HDWalletProvider(privateKey, `https://rpc-mumbai.maticvigil.com/v1/c542596d3086e52602d4c9d913d1c6f709639f08`),
       network_id: 80001,
       confirmations: 2,
